@@ -1,5 +1,5 @@
-<nav class="navbar box shadow-7" style="background-color: #1e94d2;padding: 10px 0;">
-    <div class="container">
+<nav class="navbar ">
+    <div class="container box shadow-7" style="background-color: #1e94d2;padding: 10px 0;">
         <div class="col-12 ">
 
 
@@ -18,12 +18,12 @@
 
             <ul class="navbar-menu" [hidden]="!exibindoMenu">
 
-                <li class="navbar-menuitem"><a href="#"><i class="pi pi-home"></i>Home</a></li>
+                <li class="navbar-menuitem"><a routerLink="home"><i class="pi pi-home"></i>Home</a></li>
                 <li class="navbar-menuitem">
                     <a href="#"><i class="pi pi-minus"></i>Lançamentos Despesas</a></li>
 
 
-                <li class="navbar-menuitem"><a href="#"><i class="pi pi-plus"></i>Lançamentos Receitas</a></li>
+                <li class="navbar-menuitem"><a routerLink="receitas"><i class="pi pi-plus"></i>Lançamentos Receitas</a></li>
                 <li class="navbar-menuitem">
                     <a href="#"><i class="pi pi-money-bill"></i>Resumo</a>
                 </li>
@@ -31,4 +31,6 @@
 
         </div>
     </div>
+    <router-outlet>
+    </router-outlet>
 </nav>

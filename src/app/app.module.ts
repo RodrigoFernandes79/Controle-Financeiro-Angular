@@ -16,6 +16,8 @@ import {TooltipModule} from 'primeng/tooltip';
 import {StyleClassModule} from 'primeng/styleclass';
 import {ListboxModule} from 'primeng/listbox';
 import {TieredMenuModule} from 'primeng/tieredmenu';
+import { HomeComponent } from './components/home/home.component';
+import {CardModule} from 'primeng/card';
 
  
 @NgModule({
@@ -23,6 +25,7 @@ import {TieredMenuModule} from 'primeng/tieredmenu';
     AppComponent,
     NavbarComponent,
     FormulariosComponent,
+    HomeComponent,
     
   ],
   imports: [
@@ -38,7 +41,8 @@ import {TieredMenuModule} from 'primeng/tieredmenu';
     TooltipModule,
     StyleClassModule,
     ListboxModule,
-    TieredMenuModule
+    TieredMenuModule,
+    CardModule
    
   
     
