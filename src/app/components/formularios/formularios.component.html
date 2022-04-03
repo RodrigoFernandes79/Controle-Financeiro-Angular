@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <p-table [value]="receitas" responsiveLayout="stack">
+    <p-table [value]="receitas" responsiveLayout="stack" [paginator]="true" [rows]="2">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th>ID</th>
@@ -54,8 +54,12 @@
 
         </ng-template>
 
-
-
-
     </p-table>
+    <div class="col-12 ">
+
+
+        <p-button label=" Adicionar Receitas " class="p-button-sm box shadow-5 "><i class="pi pi-plus" style="margin-right: 10px;"></i>
+
+        </p-button>
+    </div>
 </div>
