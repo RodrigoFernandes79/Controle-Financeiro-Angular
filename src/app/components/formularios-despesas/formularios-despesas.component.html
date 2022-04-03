@@ -3,7 +3,7 @@
 
     <div class="grid">
         <div class="col-12 ">
-            <h1>Lançamentos Receitas</h1>
+            <h1>Lançamentos Despesas</h1>
         </div>
         <div class="p-fluid col-12 ">
             <label>Descrição</label>
@@ -25,13 +25,14 @@
         </div>
     </div>
 
-    <p-table [value]="receitas" responsiveLayout="stack" [paginator]="true" [rows]="2">
+    <p-table [value]="despesas" responsiveLayout="stack" [paginator]="true" [rows]="5">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th>ID</th>
                 <th>Descrição</th>
+                <th>Categoria</th>
                 <th>Valor</th>
-                <th>Data Recebimento</th>
+                <th>Data de Pagamento</th>
                 <th>Ações</th>
             </tr>
         </ng-template>
@@ -40,8 +41,9 @@
 
                 <td>{{columns.id}}</td>
                 <td>{{columns.descricao}}</td>
+                <td>{{columns.categoria}}</td>
                 <td>{{columns.valor}}</td>
-                <td>{{columns.dataRecebimento}}</td>
+                <td>{{columns.dataPagamento}}</td>
                 <td> <button style="margin-right: 5px;" pButton pRipple icon="pi pi-trash " type="button " styleClass="p-button-sm" pTooltip="Editar" tooltipPosition="top" class="p-button-rounded p-button-info ">
                     </button>
                     <button pButton pRipple icon="pi pi-pencil " type="button " styleClass="p-button-sm" pTooltip="Deletar" tooltipPosition="top" class="p-button-rounded p-button-danger "></button>
@@ -58,7 +60,7 @@
     <div class="col-12 ">
 
 
-        <p-button label=" Adicionar Receitas " class="p-button-sm box shadow-5 "><i class="pi pi-plus" style="margin-right: 10px;"></i>
+        <p-button label=" Adicionar Despesas " class="p-button-sm box shadow-5 "><i class="pi pi-plus" style="margin-right: 10px;"></i>
 
         </p-button>
     </div>

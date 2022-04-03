@@ -20,6 +20,7 @@ export class FormulariosComponent implements OnInit {
 
   listarReceitas():void{
     this.service.getReceitas().subscribe(resposta=>{
+    console.log(resposta)
       this.receitas=resposta;
     })
   }

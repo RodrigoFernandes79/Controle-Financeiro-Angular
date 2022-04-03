@@ -18,6 +18,7 @@ import {ListboxModule} from 'primeng/listbox';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 import { HomeComponent } from './components/home/home.component';
 import {CardModule} from 'primeng/card';
+import { FormulariosDespesasComponent } from './components/formularios-despesas/formularios-despesas.component';
 
  
 @NgModule({
@@ -26,6 +27,8 @@ import {CardModule} from 'primeng/card';
     NavbarComponent,
     FormulariosComponent,
     HomeComponent,
+    FormulariosDespesasComponent,
+    
     
   ],
   imports: [
@@ -42,7 +45,8 @@ import {CardModule} from 'primeng/card';
     StyleClassModule,
     ListboxModule,
     TieredMenuModule,
-    CardModule
+    CardModule,
+    
    
   
     
