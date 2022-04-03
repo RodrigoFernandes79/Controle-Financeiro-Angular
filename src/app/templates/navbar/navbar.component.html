@@ -1,8 +1,34 @@
-<div class="box shadow-7">
-    <p-megaMenu>
-        <h1>
+<nav class="navbar box shadow-7" style="background-color: #1e94d2;padding: 10px 0;">
+    <div class="container">
+        <div class="col-12 ">
 
-            <i class="pi pi-spin pi-money-bill" style="font-size: 2rem; margin: 0 20px 0 10px;"></i> Controle Financeiro</h1>
 
-    </p-megaMenu>
-</div>
+
+
+
+            <div class="custom-menu" style="background-color: #1e94d2;">
+                <h1 style="color:white; background-color: #1e94d2; ">
+                    <p-button styleClass="p-button-sm" type="button" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu">
+                        <i class="pi pi-align-justify"></i>
+
+                    </p-button> Controle Financeiro</h1>
+            </div>
+
+
+
+            <ul class="navbar-menu" [hidden]="!exibindoMenu">
+
+                <li class="navbar-menuitem"><a href="#"><i class="pi pi-home"></i>Home</a></li>
+                <li class="navbar-menuitem">
+                    <a href="#"><i class="pi pi-minus"></i>Lançamentos Despesas</a></li>
+
+
+                <li class="navbar-menuitem"><a href="#"><i class="pi pi-plus"></i>Lançamentos Receitas</a></li>
+                <li class="navbar-menuitem">
+                    <a href="#"><i class="pi pi-money-bill"></i>Resumo</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

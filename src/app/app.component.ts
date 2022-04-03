@@ -8,10 +8,11 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent {
   title = 'financeiro';
-  constructor(private primengConfig: PrimeNGConfig) {}
+  
+  constructor() {}
 
   ngOnInit() {
-      this.primengConfig.ripple = true;
+      
   }
   }
   

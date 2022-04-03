@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {ButtonModule} from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './templates/navbar/navbar.component';
+import { NavbarComponent } from "./templates/navbar/navbar.component";
 import {MegaMenuModule} from 'primeng/megamenu';
 import {SidebarModule} from 'primeng/sidebar';
 import {MenuModule} from 'primeng/menu';
@@ -13,6 +13,10 @@ import {InputTextModule} from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
+import {StyleClassModule} from 'primeng/styleclass';
+import {ListboxModule} from 'primeng/listbox';
+import {TieredMenuModule} from 'primeng/tieredmenu';
+
  
 @NgModule({
   declarations: [
@@ -31,7 +35,12 @@ import {TooltipModule} from 'primeng/tooltip';
     InputTextModule,
     HttpClientModule,
     TableModule,
-    TooltipModule
+    TooltipModule,
+    StyleClassModule,
+    ListboxModule,
+    TieredMenuModule
+   
+  
     
    
   ],
