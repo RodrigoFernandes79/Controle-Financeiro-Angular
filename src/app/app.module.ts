@@ -19,6 +19,17 @@ import {TieredMenuModule} from 'primeng/tieredmenu';
 import { HomeComponent } from './components/home/home.component';
 import {CardModule} from 'primeng/card';
 import { FormulariosDespesasComponent } from './components/formularios-despesas/formularios-despesas.component';
+import { CriarDespesaComponent } from './components/criar-despesa/criar-despesa.component';
+import {CalendarModule} from 'primeng/calendar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DropdownModule} from 'primeng/dropdown';
+import {ToastModule} from 'primeng/toast';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {InputNumberModule} from 'primeng/inputnumber';
+import { RouterModule } from '@angular/router';
+
 
  
 @NgModule({
@@ -28,6 +39,8 @@ import { FormulariosDespesasComponent } from './components/formularios-despesas/
     FormulariosComponent,
     HomeComponent,
     FormulariosDespesasComponent,
+    CriarDespesaComponent,
+   
     
     
   ],
@@ -46,13 +59,29 @@ import { FormulariosDespesasComponent } from './components/formularios-despesas/
     ListboxModule,
     TieredMenuModule,
     CardModule,
+    CalendarModule, 
+    //importar o BrowserAnimationsModule para mostrar o calendario 
+    BrowserAnimationsModule,
+    DropdownModule,
+    ToastModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MessagesModule,
+    MessageModule,
+    InputNumberModule,
+   
+   
+   
+  
+  
     
    
   
     
    
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

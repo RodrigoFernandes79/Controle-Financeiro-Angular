@@ -3,8 +3,14 @@
         color: #404C51;
     }
     
-    label {
+    label,
+    .ml-2 {
         font-weight: bold;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #337ab7;
     }
     
     @media (min-width:1200px) {

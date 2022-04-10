@@ -30,6 +30,7 @@
             <tr>
                 <th>ID</th>
                 <th>Descrição</th>
+                <th>Tipo</th>
                 <th>Categoria</th>
                 <th>Valor</th>
                 <th>Data de Pagamento</th>
@@ -41,6 +42,7 @@
 
                 <td>{{columns.id}}</td>
                 <td>{{columns.descricao}}</td>
+                <td>{{columns.tipo}}</td>
                 <td>{{columns.categoria}}</td>
                 <td>{{columns.valor}}</td>
                 <td>{{columns.dataPagamento}}</td>
@@ -60,8 +62,11 @@
     <div class="col-12 ">
 
 
-        <p-button label=" Adicionar Despesas " class="p-button-sm box shadow-5 "><i class="pi pi-plus" style="margin-right: 10px;"></i>
+
+        <p-button label=" Adicionar Despesas " (click)="adicionaDespesa()" class="p-button-sm box shadow-5 "><i class="pi pi-plus " style="margin-right: 10px; "></i>
 
         </p-button>
+
+
     </div>
 </div>

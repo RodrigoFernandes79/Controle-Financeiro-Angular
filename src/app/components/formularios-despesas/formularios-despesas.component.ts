@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Despesas } from 'src/app/models/despesas';
 import { DespesasService } from 'src/app/services/despesas.service';
 
@@ -14,7 +16,7 @@ export class FormulariosDespesasComponent implements OnInit {
   
 
 
-  constructor(private service:DespesasService) { }
+  constructor(private service:DespesasService, private router:Router) { }
 
   ngOnInit(): void {
     this.listarDespesas();
@@ -26,4 +28,7 @@ export class FormulariosDespesasComponent implements OnInit {
       this.despesas=resposta;
     })
   }
+ adicionaDespesa(){
+   this.router.navigate(['/despesas/criadespesas'])
+ }
 }

@@ -7,10 +7,15 @@ import { Despesas } from '../models/despesas';
   providedIn: 'root'
 })
 export class DespesasService {
-private despesasUrl:string ='http://localhost:8080/despesas/'
+private despesasUrl:string ='http://localhost:8080/despesas'
   constructor(private http:HttpClient) { }
 
   getDespesas():Observable<Despesas[]>{
-    return this.http.get<Despesas[]>(this.despesasUrl+'getall');
+    return this.http.get<Despesas[]>(this.despesasUrl+'/getall');
+  }
+
+  createDespesas(despesas:Despesas):Observable<Despesas>{
+    return this.http.post<Despesas>(this.despesasUrl,Despesas.toJson(despesas));
+    
   }
 }
