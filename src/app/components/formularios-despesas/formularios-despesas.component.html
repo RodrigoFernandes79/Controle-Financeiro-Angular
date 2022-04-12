@@ -1,30 +1,31 @@
 <div class="container" style="margin-top:40px;  ">
+    <form autocomplete="off" (ngSubmit)="pesquisarDespesas()">
 
+        <div class=" grid ">
 
-    <div class="grid">
-        <div class="col-12 ">
-            <h1>Lançamentos Despesas</h1>
-        </div>
-        <div class="p-fluid col-12 ">
-            <label>Descrição</label>
-            <span class="p-input-icon-left box shadow-5 p-inputtext-sm ">
+            <div class="col-12 ">
+                <h1>Lançamentos Despesas</h1>
+            </div>
+            <div class="p-fluid col-12 ">
+                <label>Descrição</label>
+                <span class="p-input-icon-left box shadow-5 p-inputtext-sm ">
              
-                <i class="pi pi-search "></i>
-                <input   type="text " pInputText  >
+                <input   type="text" pInputText  name="descricao" [(ngModel)]="descricao" >
             </span>
-        </div>
-        <div class="p-fluid col-12 ">
-            <label style="display: block;">Vencimentos</label>
-            <input type="text " pInputText class="p-inputtext-sm box shadow-5" style="width:95px">
-            <label>até</label>
-            <input type="text " pInputText class="p-inputtext-sm box shadow-5" style="width:95px">
-        </div>
-        <div class="col-12 ">
+            </div>
+            <div class="p-fluid col-12 ">
+                <label style="display: block; ">Vencimentos</label>
+                <input type="text " pInputText class="p-inputtext-sm box shadow-5 " style="width:95px ">
+                <label>até</label>
+                <input type="text " pInputText class="p-inputtext-sm box shadow-5 " style="width:95px ">
+            </div>
+            <div class="col-12 ">
 
-            <p-button label="Pesquisar" class="p-button-sm box shadow-5"></p-button>
-        </div>
-    </div>
+                <p-button label="Pesquisar " type="submit" class="p-button-sm box shadow-5 "></p-button>
+            </div>
 
+        </div>
+    </form>
     <p-table [value]="despesas" responsiveLayout="stack" [paginator]="true" [rows]="5">
         <ng-template pTemplate="header" let-columns>
             <tr>
@@ -46,9 +47,9 @@
                 <td>{{columns.categoria}}</td>
                 <td>{{columns.valor}}</td>
                 <td>{{columns.dataPagamento}}</td>
-                <td> <button style="margin-right: 5px;" pButton pRipple icon="pi pi-trash " type="button " styleClass="p-button-sm" pTooltip="Editar" tooltipPosition="top" class="p-button-rounded p-button-info ">
+                <td> <button style="margin-right: 5px; " pButton pRipple icon="pi pi-trash " type="button " styleClass="p-button-sm " pTooltip="Editar " tooltipPosition="top " class="p-button-rounded p-button-info ">
                     </button>
-                    <button pButton pRipple icon="pi pi-pencil " type="button " styleClass="p-button-sm" pTooltip="Deletar" tooltipPosition="top" class="p-button-rounded p-button-danger "></button>
+                    <button pButton pRipple icon="pi pi-pencil " type="button " styleClass="p-button-sm " pTooltip="Deletar " tooltipPosition="top " class="p-button-rounded p-button-danger "></button>
                 </td>
 
 
@@ -59,6 +60,7 @@
         </ng-template>
 
     </p-table>
+
     <div class="col-12 ">
 
 

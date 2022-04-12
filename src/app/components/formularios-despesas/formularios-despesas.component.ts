@@ -13,13 +13,16 @@ export class FormulariosDespesasComponent implements OnInit {
 
 
   despesas:Despesas[]=[];
+  descricao:string='';
   
-
 
   constructor(private service:DespesasService, private router:Router) { }
 
   ngOnInit(): void {
     this.listarDespesas();
+    
+
+    
   }
 
   listarDespesas():void{
@@ -31,4 +34,13 @@ export class FormulariosDespesasComponent implements OnInit {
  adicionaDespesa(){
    this.router.navigate(['/despesas/criadespesas'])
  }
+ pesquisarDespesas(): void{
+   this.service.pesquisar({descricao:this.descricao})
+.subscribe(resposta=>{
+  this.despesas=resposta;
+})
+   
+ }
 }
+
+
