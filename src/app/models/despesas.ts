@@ -16,9 +16,7 @@ export class Despesas {
           dataPagamento: moment(despesas.dataPagamento).format('DD/MM/YYYY')
         };
       }
-   
-
-}
+    } 
 
 
 

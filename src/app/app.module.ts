@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import {ButtonModule} from 'primeng/button';
@@ -29,6 +29,10 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { RouterModule } from '@angular/router';
+import { DatePipe, registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt, 'pt-BR');
 
 
  
@@ -70,7 +74,7 @@ import { RouterModule } from '@angular/router';
     MessagesModule,
     MessageModule,
     InputNumberModule,
-   
+    
    
    
   
@@ -81,7 +85,14 @@ import { RouterModule } from '@angular/router';
     
    
   ],
-  providers: [ ],
+  providers: [DatePipe,
+    {provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
