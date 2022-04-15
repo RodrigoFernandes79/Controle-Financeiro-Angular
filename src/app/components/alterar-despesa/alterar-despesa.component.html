@@ -1,0 +1,62 @@
+<div class="container" style="margin-top:40px;">
+    <form class="form" #courseForm="ngForm">
+        <div class="grid">
+
+            <div class="col-12 ">
+                <h1>Edição de Lançamento de Despesas</h1>
+            </div>
+            <div class="p-fluid col-5 ">
+                <label for="dataPagamento">Data de vencimento</label>
+                <--dataType converte o dateFormat em string-->
+                    <p-calendar dataType="string" dateFormat="dd/mm/yy" [(ngModel)]="despesas.dataPagamento" #dataPagamento="ngModel" [required]="true" name="dataPagamento"></p-calendar>
+                    <div *ngIf="dataPagamento.hasError('required') && dataPagamento.dirty">
+                        <small class="p-error">Informe uma data de pagamento.</small>
+                    </div>
+            </div>
+
+            <div class="p-fluid col-8">
+                <label for="descricao">Descrição</label>
+                <input id="descricao" ngModel #descricao="ngModel" type="text" pInputText name="descricao" [required]="true" minlength="5" [(ngModel)]="despesas.descricao">
+                <div *ngIf="descricao.hasError( 'required') && descricao.dirty">
+                    <small class="p-error ">Informe uma descrição.</small>
+                </div>
+                <div *ngIf="descricao.hasError( 'minlength') && descricao.dirty">
+                    <small class="p-error">Campo descriçao requer mínimo 5 caracteres.</small>
+                </div>
+            </div>
+
+            <div class="p-fluid col-4">
+                <span class="ml-2 ">Valor</span>
+                <p-inputNumber id="valor" ngModel #valor="ngModel" prefix="R$" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="2" putId="minmaxfraction" mode="decimal" placeholder="0,00" [(ngModel)]="despesas.valor" [required]="true" name="valor"></p-inputNumber>
+                <div *ngIf="valor.hasError( 'required' ) && valor.dirty">
+                    <small class="p-error">Informe o valor.</small>
+                </div>
+            </div>
+
+
+            <div class=" p-fluid col-6 ">
+                <span class="ml-2 ">Tipo</span>
+                <p-dropdown [filter]="true" placeholder="Selecione" [options]="tipo" [(ngModel)]="despesas.tipo" ngModel name="tipo" [showClear]="true" [required]="true"></p-dropdown>
+
+
+            </div>
+            <div class="p-fluid col-6 ">
+                <span class="ml-2 ">Categoria</span>
+                <p-dropdown [filter]="true " placeholder="Selecione" [options]="categoria" [(ngModel)]="despesas.categoria" ngModel [required]="true" name="categoria" [showClear]="true">
+
+                </p-dropdown>
+            </div>
+            <div class="col-12 ">
+                <button pButton pRipple type="submit" [disabled]="courseForm.invalid" class="p-button-text " style="margin-right:5px;" (click)="alteraDespesas()" label="Salvar">
+                </button>
+
+                <button pButton pRipple type="button" label="Novo" (click)="reset()" class="p-button-info"></button>
+                <a href="despesas" style="margin-left:10px;">
+                Voltar para pesquisa de despesas</a>
+            </div>
+        </div>
+    </form>
+
+
+
+</div>

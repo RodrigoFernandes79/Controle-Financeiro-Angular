@@ -7,7 +7,7 @@ export class Despesas {
      tipo: string= "FIXA";
      categoria: string ="OUTRAS"
     valor: any;
-    dataPagamento:Date;
+    dataPagamento?:Date;
     
     static toJson(despesas: Despesas): any {
         return {

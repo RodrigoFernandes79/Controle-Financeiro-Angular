@@ -1,8 +1,9 @@
 
 import { DatePipe } from '@angular/common';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 import { Observable } from 'rxjs';
 import { Despesas } from '../models/despesas';
 
@@ -16,6 +17,7 @@ private despesasUrl:string ='http://localhost:8080/despesas'
   
   constructor(private http:HttpClient, private datePipe:DatePipe) { }
 
+
   getDespesas():Observable<Despesas[]>{
     return this.http.get<Despesas[]>(`${this.despesasUrl}/getall`);
   }
@@ -24,6 +26,7 @@ private despesasUrl:string ='http://localhost:8080/despesas'
     return this.http.post<Despesas>(this.despesasUrl,Despesas.toJson(despesas));
     
   }
+
   pesquisar(filtro:any):Observable<any[]>{
     let params = new HttpParams();
 
@@ -32,6 +35,7 @@ private despesasUrl:string ='http://localhost:8080/despesas'
     }
     return this.http.get<any[]>(`${this.despesasUrl}?`,{params}) 
   }
+
   pesquisarDatas(ano:any, mes:any):Observable<any[]>{
     
     if (ano){
@@ -45,7 +49,18 @@ private despesasUrl:string ='http://localhost:8080/despesas'
   console.log(mes,ano)
      return this.http.get<any[]>(`${this.despesasUrl}/${ano}/${mes}`)
   }
- 
+
+deletarDespesas(id:any):Observable<Despesas>{
+  
+  return this.http.delete<Despesas>(`${this.despesasUrl}/${id}`)
 }
+ encontrarDespesasPorId(id:any):Observable<any>{
+   
+   return this.http.get<any>(`${this.despesasUrl}/${id}`)
+ }
+ alterarDespesasPorId(despesas:Despesas,id:any):Observable<Despesas>{
+ 
 
-
+return this.http.put<Despesas>(`${this.despesasUrl}/${id}` ,despesas)
+ }
+}
