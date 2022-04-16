@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFound404Component } from './404/not-found404/not-found404.component';
 import { AlterarDespesaComponent } from './components/alterar-despesa/alterar-despesa.component';
 import { AlterarReceitaComponent } from './components/alterar-receita/alterar-receita.component';
 import { CriarDespesaComponent } from './components/criar-despesa/criar-despesa.component';
@@ -15,10 +16,11 @@ const routes: Routes = [
   {path:'receitas/criareceitas',component:CriarReceitaComponent},
   {path:'receitas/:id',component:AlterarReceitaComponent},
   {path:'home', component:HomeComponent},
+  
  {path:'despesas',component:FormulariosDespesasComponent},
   {path:'despesas/criadespesas',component:CriarDespesaComponent},
   {path:'despesas/:id',component:AlterarDespesaComponent},
-
+  {path:'**',component: NotFound404Component},
 
  
 ];

@@ -47,7 +47,7 @@
                 <td>{{columns.descricao}}</td>
                 <td>{{columns.tipo}}</td>
                 <td>{{columns.categoria}}</td>
-                <td>{{columns.valor}}</td>
+                <td>{{columns.valor | currency: 'BRL'}}</td>
                 <td>{{columns.dataPagamento}}</td>
                 <td> <button style="margin-right: 5px;" pButton pRipple icon="pi pi-trash" (click)="deletaDespesa(columns)" type="button" styleClass="p-button-sm " pTooltip="Deletar" tooltipPosition="top" class="p-button-rounded p-button-info">
                     </button>

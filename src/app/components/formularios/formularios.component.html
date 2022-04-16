@@ -42,7 +42,7 @@
 
                 <td>{{columns.id}}</td>
                 <td>{{columns.descricao}}</td>
-                <td>{{columns.valor}}</td>
+                <td>{{columns.valor | currency: 'BRL'}}</td>
                 <td>{{columns.dataRecebimento}}</td>
                 <td> <button style="margin-right: 5px;" pButton pRipple icon="pi pi-trash" (click)="deletarReceita(columns)" type="button" styleClass="p-button-sm " pTooltip="Deletar" tooltipPosition="top" class="p-button-rounded p-button-info">
                 </button>

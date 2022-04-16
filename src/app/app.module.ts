@@ -34,7 +34,9 @@ import localePt from '@angular/common/locales/pt';
 import { AlterarDespesaComponent } from './components/alterar-despesa/alterar-despesa.component';
 import { CriarReceitaComponent } from './components/criar-receita/criar-receita.component';
 import { AlterarReceitaComponent } from './components/alterar-receita/alterar-receita.component';
-
+import { NotFound404Component } from './404/not-found404/not-found404.component';
+import {ImageModule} from 'primeng/image';
+import { pipeReplace } from './pipes/pipeReplace';
 registerLocaleData(localePt, 'pt-BR');
 
 
@@ -50,7 +52,8 @@ registerLocaleData(localePt, 'pt-BR');
     AlterarDespesaComponent,
     CriarReceitaComponent,
     AlterarReceitaComponent,
-   
+    NotFound404Component,
+   pipeReplace
     
     
   ],
@@ -80,7 +83,7 @@ registerLocaleData(localePt, 'pt-BR');
     MessagesModule,
     MessageModule,
     InputNumberModule,
-    
+    ImageModule
    
    
   
