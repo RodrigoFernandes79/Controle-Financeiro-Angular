@@ -7,11 +7,10 @@
             </div>
             <div class="p-fluid col-5 ">
                 <label for="dataPagamento">Data de vencimento</label>
-                <--dataType converte o dateFormat em string-->
-                    <p-calendar dataType="string" dateFormat="dd/mm/yy" [(ngModel)]="despesas.dataPagamento" #dataPagamento="ngModel" [required]="true" name="dataPagamento"></p-calendar>
-                    <div *ngIf="dataPagamento.hasError('required') && dataPagamento.dirty">
-                        <small class="p-error">Informe uma data de pagamento.</small>
-                    </div>
+                <p-calendar dataType="string" dateFormat="dd/mm/yy" [(ngModel)]="despesas.dataPagamento" #dataPagamento="ngModel" [required]="true" name="dataPagamento"></p-calendar>
+                <div *ngIf="dataPagamento.hasError('required') && dataPagamento.dirty">
+                    <small class="p-error">Informe uma data de pagamento.</small>
+                </div>
             </div>
 
             <div class="p-fluid col-8">

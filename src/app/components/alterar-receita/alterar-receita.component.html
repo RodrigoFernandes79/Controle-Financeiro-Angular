@@ -1,0 +1,49 @@
+<div class="container" style="margin-top:40px;">
+    <form class="form" #courseForm="ngForm">
+        <div class="grid">
+
+            <div class="col-12 ">
+                <h1>Edição de Lançamento de Receitas</h1>
+            </div>
+            <div class="p-fluid col-5 ">
+                <label for="dataRecebimento">Data de recebimento</label>
+                <p-calendar dataType="string" dateFormat="dd/mm/yy" [(ngModel)]="receitas.dataRecebimento" #dataRecebimento="ngModel" [required]="true" name="dataRecebimento"></p-calendar>
+                <div *ngIf="dataRecebimento.hasError('required') && dataRecebimento.dirty">
+                    <small class="p-error">Informe uma data de recebimento.</small>
+                </div>
+            </div>
+
+            <div class="p-fluid col-8">
+                <label for="descricao">Descrição</label>
+                <input id="descricao" ngModel #descricao="ngModel" type="text" pInputText name="descricao" [required]="true" minlength="5" [(ngModel)]="receitas.descricao">
+                <div *ngIf="descricao.hasError( 'required') && descricao.dirty">
+                    <small class="p-error ">Informe uma descrição.</small>
+                </div>
+                <div *ngIf="descricao.hasError( 'minlength') && descricao.dirty">
+                    <small class="p-error">Campo descriçao requer mínimo 5 caracteres.</small>
+                </div>
+            </div>
+
+            <div class="p-fluid col-4">
+                <span class="ml-2 ">Valor</span>
+                <p-inputNumber id="valor" ngModel #valor="ngModel" prefix="R$" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="2" putId="minmaxfraction" mode="decimal" placeholder="0,00" [(ngModel)]="receitas.valor" [required]="true" name="valor"></p-inputNumber>
+                <div *ngIf="valor.hasError( 'required' ) && valor.dirty">
+                    <small class="p-error">Informe o valor.</small>
+                </div>
+            </div>
+
+
+            <div class="col-12 ">
+                <button pButton pRipple type="submit" [disabled]="courseForm.invalid" class="p-button-text " style="margin-right:5px;" (click)="alteraReceitas()" label="Salvar">
+                </button>
+
+                <button pButton pRipple type="button" label="Novo" (click)="reset()" class="p-button-info"></button>
+                <a href="receitas" style="margin-left:10px;">
+                Voltar para pesquisa de receitas</a>
+            </div>
+        </div>
+    </form>
+
+
+
+</div>

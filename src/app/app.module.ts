@@ -32,6 +32,8 @@ import { RouterModule } from '@angular/router';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { AlterarDespesaComponent } from './components/alterar-despesa/alterar-despesa.component';
+import { CriarReceitaComponent } from './components/criar-receita/criar-receita.component';
+import { AlterarReceitaComponent } from './components/alterar-receita/alterar-receita.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -46,6 +48,8 @@ registerLocaleData(localePt, 'pt-BR');
     FormulariosDespesasComponent,
     CriarDespesaComponent,
     AlterarDespesaComponent,
+    CriarReceitaComponent,
+    AlterarReceitaComponent,
    
     
     

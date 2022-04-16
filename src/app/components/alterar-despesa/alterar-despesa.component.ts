@@ -42,10 +42,7 @@ categoria =[
  
     this.encontraDespesaPorId();
   
-   
   }
-
-
 
 encontraDespesaPorId():void{
 this.service.encontrarDespesasPorId(this.id).subscribe(resposta=>{

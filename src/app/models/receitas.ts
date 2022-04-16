@@ -1,7 +1,16 @@
+import * as moment from "moment";
+
 export class Receitas{
     id?:number;
-    descricao:any;
+    descricao:string;
     valor:any;
-    dataRecebimento:any;
+    dataRecebimento?:Date;
 
-}
+    static toJson(receitas: Receitas): any {
+        return {
+          ...receitas,
+          
+          dataRecebimento: moment(receitas.dataRecebimento).format('DD/MM/YYYY')
+        };
+      }
+    } 
