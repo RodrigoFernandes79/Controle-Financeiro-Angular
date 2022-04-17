@@ -25,16 +25,5 @@ export class ResumoMesService {
     }
     return this.http.get<ResumoMes>(`${this.resumoMesUrl}/${ano}/${mes}`);
   }
-  buscarResumoMensalCategoria(ano:any, mes:any):Observable<ResumoMes[]>{
-    if (ano){
-      ano =this.datePipe.transform(ano,'yyyy');
-     }
-    if(mes){
-      
-    mes = this.datePipe.transform(mes,'MM');
-    }
-    
-    return this.http.get<ResumoMes[]>(`${this.resumoMesUrl}/${ano}/${mes}`);
-    
-  }
+ 
 }

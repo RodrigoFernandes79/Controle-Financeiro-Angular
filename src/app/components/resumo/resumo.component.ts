@@ -18,7 +18,7 @@ export class ResumoComponent implements OnInit {
  
   receitas:Receitas[]=[];
   despesas:Despesas[]=[];
-  resumos:ResumoMes[]=[];
+  
   gasto:GastoCategoria[] =[]
   
   mes?:Date;
@@ -40,7 +40,7 @@ export class ResumoComponent implements OnInit {
 
   pesquisarTudo(): void{
     this.buscarResumoMensal();
-    this.buscarResumoMensalCategoria();
+  
     this.service.pesquisarDatas(this.ano,this.mes).subscribe(resposta=>{
       
    
@@ -63,13 +63,4 @@ export class ResumoComponent implements OnInit {
      this.resumo=new ResumoMes();
    }
 
-
-   buscarResumoMensalCategoria():void{
-     this.resumoService.buscarResumoMensalCategoria(this.ano,this.mes).subscribe(resposta=>{
-       this.resumos =resposta;
-   
-      });
-      
-   
-   }
 }
