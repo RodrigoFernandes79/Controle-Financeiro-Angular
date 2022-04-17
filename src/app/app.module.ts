@@ -37,6 +37,7 @@ import { AlterarReceitaComponent } from './components/alterar-receita/alterar-re
 import { NotFound404Component } from './404/not-found404/not-found404.component';
 import {ImageModule} from 'primeng/image';
 import { pipeReplace } from './pipes/pipeReplace';
+import { ResumoComponent } from './components/resumo/resumo.component';
 registerLocaleData(localePt, 'pt-BR');
 
 
@@ -53,7 +54,8 @@ registerLocaleData(localePt, 'pt-BR');
     CriarReceitaComponent,
     AlterarReceitaComponent,
     NotFound404Component,
-   pipeReplace
+   pipeReplace,
+   ResumoComponent
     
     
   ],

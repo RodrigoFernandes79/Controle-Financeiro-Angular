@@ -9,6 +9,7 @@ import { CriarReceitaComponent } from './components/criar-receita/criar-receita.
 import { FormulariosDespesasComponent } from './components/formularios-despesas/formularios-despesas.component';
 import { FormulariosComponent } from './components/formularios/formularios.component';
 import { HomeComponent } from './components/home/home.component';
+import { ResumoComponent } from './components/resumo/resumo.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -20,7 +21,10 @@ const routes: Routes = [
  {path:'despesas',component:FormulariosDespesasComponent},
   {path:'despesas/criadespesas',component:CriarDespesaComponent},
   {path:'despesas/:id',component:AlterarDespesaComponent},
+  {path:'resumo', component:ResumoComponent},
   {path:'**',component: NotFound404Component},
+
+  
 
  
 ];
