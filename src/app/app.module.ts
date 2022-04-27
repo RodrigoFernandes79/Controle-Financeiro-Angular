@@ -38,6 +38,9 @@ import { NotFound404Component } from './404/not-found404/not-found404.component'
 import {ImageModule} from 'primeng/image';
 import { pipeReplace } from './pipes/pipeReplace';
 import { ResumoComponent } from './components/resumo/resumo.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import {ChartModule} from 'primeng/chart';
+import {PanelModule} from 'primeng/panel'
 registerLocaleData(localePt, 'pt-BR');
 
 
@@ -55,7 +58,8 @@ registerLocaleData(localePt, 'pt-BR');
     AlterarReceitaComponent,
     NotFound404Component,
    pipeReplace,
-   ResumoComponent
+   ResumoComponent,
+   ChartsComponent
     
     
   ],
@@ -85,7 +89,9 @@ registerLocaleData(localePt, 'pt-BR');
     MessagesModule,
     MessageModule,
     InputNumberModule,
-    ImageModule
+    ImageModule,
+    ChartModule,
+    PanelModule
    
    
   

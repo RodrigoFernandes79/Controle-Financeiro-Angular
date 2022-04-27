@@ -1,8 +1,8 @@
-<div class="container" style="margin-top:40px;  ">
+<div class="container" style="margin-top:40px;">
     <form autocomplete="off" (ngSubmit)="pesquisarTudo()">
 
         <div class="grid">
-            <div class="col-12 ">
+            <div class="col-12">
                 <h1>Resumo Mensal</h1>
             </div>
             <div class="col-12">
@@ -14,9 +14,9 @@
                 <label><h4>Ano</h4></label>
                 <p-calendar dateFormat="yy" view="year" [(ngModel)]="ano" name="ano"></p-calendar>
             </div>
-            <div class="col-12 ">
+            <div class="col-12">
 
-                <p-button label="Pesquisar " type="submit " class="p-button-sm box shadow-5 "></p-button>
+                <p-button label="Pesquisar" type="submit" class="p-button-sm box shadow-5"></p-button>
             </div>
 
         </div>
@@ -42,14 +42,14 @@
                     <td>{{columns.id}}</td>
                     <td>{{columns.descricao}}</td>
                     <td>{{columns.dataRecebimento}}</td>
-                    <td style="color:blue">{{columns.valor | currency: 'BRL'}}</td>
+                    <td style="color:blue">{{ columns.valor | currency: 'BRL' }}</td>
                 </tr>
 
             </ng-template>
             <ng-template *ngIf="resumo" pTemplate="footer">
                 <tr>
                     <td colspan="3" class="text-right">Total Receita:</td>
-                    <td style="color:blue">{{ resumo.valorTotalReceitas | currency: 'BRL'}}</td>
+                    <td style="color:blue">{{ resumo.valorTotalReceitas | currency: 'BRL' }}</td>
 
                 </tr>
             </ng-template>

@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="grid">
+        <div class="col-12">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="grid" *ngIf="saldo" style="justify-content: center;margin-bottom: 2vw;">
+            <div class="sm-6 shadow-7" style="margin-right: 5vw;">
+                <p-card header="Total de Receitas" [style]="{width: '15vw',height:'28vh'}">
+                    <div style="color:blue;font-weight: bold;">{{ saldo.receitasTotal | currency:'BRL'}}</div>
+                </p-card>
+            </div>
+            <div class=" sm-6 shadow-7" style="margin-right: 5vw;">
+                <p-card header="Total de Despesas" [style]="{width: '15vw', height:'28vh'}">
+                    <div style="color:red;font-weight: bold;">{{ saldo.despesasTotal | currency:'BRL' }}</div>
+                </p-card>
+            </div>
+
+            <div class="sm-6 shadow-7">
+                <p-card header="Saldo Total " [style]="{width: '15vw', height: '28vh'}">
+
+                    <h4 [ngClass]="{'red':saldo.totalSaldo<0, 'blue':saldo.totalSaldo>0}">{{ saldo.totalSaldo | currency:'BRL'}}
+
+                    </h4>
+                </p-card>
+            </div>
+        </div>
+        <div class=" grid" style="justify-content: center">
+            <div class="lg-3 shadow-7" style="margin-right: 2vw;">
+                <p-panel header=" Lançamentos por categoria">
+                    <p-chart width="25vw" height="50vh" type="pie" [data]="pieChartData"></p-chart>
+                </p-panel>
+            </div>
+
+            <div class="lg-6 shadow-7" style="margin-right: 2vw">
+                <p-panel header="Lançamentos por Mês ">
+                    <p-chart width="30vw" height="50vh" type="bar" [data]="barChartData"></p-chart>
+                </p-panel>
+            </div>
+
+            <div class="lg-3 shadow-7" style="margin-right: 2vw;">
+                <p-panel header="Despesas por Tipos">
+                    <p-chart width="22vw" height="50vh" type="doughnut" [data]="doughnutChartData"></p-chart>
+                </p-panel>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

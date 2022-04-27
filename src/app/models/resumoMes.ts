@@ -1,4 +1,6 @@
+import { DespesasDTO } from "./despesasMes";
 import { GastoCategoria } from "./gastoCategoria";
+import { ReceitasDTO } from "./receitasMes";
 
 
 export class ResumoMes{
@@ -7,6 +9,11 @@ export class ResumoMes{
     valorTotalDespesas:any;
     saldoFinalMes:any;
     gastoCategoria:GastoCategoria[];
-
+    receitasDTO:ReceitasDTO[];
+    despesasDTO:DespesasDTO[];
+    receitasTotal:any;
+    despesasTotal:any;
+    totalSaldo:any;
+    
     
 }

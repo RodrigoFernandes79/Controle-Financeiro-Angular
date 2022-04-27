@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFound404Component } from './404/not-found404/not-found404.component';
 import { AlterarDespesaComponent } from './components/alterar-despesa/alterar-despesa.component';
 import { AlterarReceitaComponent } from './components/alterar-receita/alterar-receita.component';
+import { ChartsComponent } from './components/charts/charts.component';
 import { CriarDespesaComponent } from './components/criar-despesa/criar-despesa.component';
 import { CriarReceitaComponent } from './components/criar-receita/criar-receita.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'despesas/criadespesas',component:CriarDespesaComponent},
   {path:'despesas/:id',component:AlterarDespesaComponent},
   {path:'resumo', component:ResumoComponent},
+  {path:'charts',component:ChartsComponent},
   {path:'**',component: NotFound404Component},
 
   

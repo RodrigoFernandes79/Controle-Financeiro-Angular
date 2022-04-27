@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { Despesas } from '../models/despesas';
+import { GastoTipoDTO } from '../models/gastoTipo';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ import { Despesas } from '../models/despesas';
 })
 export class DespesasService {
  
-private despesasUrl:string ='http://localhost:8080/despesas'
+private despesasUrl:string ='https://controle-financeiro-api-spring.herokuapp.com/despesas'
   
   constructor(private http:HttpClient, private datePipe:DatePipe) { }
 
@@ -65,4 +66,8 @@ deletarDespesas(id:any):Observable<Despesas>{
 
 return this.http.put<Despesas>(`${this.despesasUrl}/${id}` ,despesas)
  }
+
+ gastoTipo():Observable<GastoTipoDTO[]>{
+  return this.http.get<GastoTipoDTO[]>(`${this.despesasUrl}/tipos`);
+}
 }

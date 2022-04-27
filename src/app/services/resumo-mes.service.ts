@@ -2,7 +2,8 @@ import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GastoCategoria } from '../models/gastoCategoria';
+
+
 import { ResumoMes } from '../models/resumoMes';
 
 @Injectable({
@@ -10,7 +11,7 @@ import { ResumoMes } from '../models/resumoMes';
 })
 export class ResumoMesService {
 
-  private resumoMesUrl: string = 'http://localhost:8080/resumo'
+  private resumoMesUrl: string = 'https://controle-financeiro-api-spring.herokuapp.com/resumo'
   
 
   constructor(private http:HttpClient, private datePipe:DatePipe) { }
@@ -26,4 +27,21 @@ export class ResumoMesService {
     return this.http.get<ResumoMes>(`${this.resumoMesUrl}/${ano}/${mes}`);
   }
  
+  buscarGastoPorCategoria():Observable<ResumoMes>{
+    return this.http.get<ResumoMes>(`${this.resumoMesUrl}`)
+  }
+
+
+  buscaReceitasPorMes():Observable<ResumoMes>{
+    return this.http.get<ResumoMes>(`${this.resumoMesUrl}/totalReceitas`)
+  }
+
+  buscaGastoPorMes():Observable<ResumoMes>{
+    
+    return this.http.get<ResumoMes>(`${this.resumoMesUrl}/totalDespesas`)
+  }
+
+  saldoFinal():Observable<ResumoMes>{
+    return this.http.get<ResumoMes>(`${this.resumoMesUrl}/saldoMensal`)
+  }
 }

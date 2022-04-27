@@ -4,7 +4,7 @@ export class Despesas {
     
     id?: number;
     descricao: string;
-     tipo: string= "FIXA";
+    tipo: string= "FIXA";
      categoria: string ="OUTRAS"
     valor: any;
     dataPagamento?:Date;

@@ -8,7 +8,7 @@ import { Receitas } from '../models/receitas';
   providedIn: 'root'
 })
 export class ReceitasService {
-  private receitasUrl: string = 'http://localhost:8080/receitas'
+  private receitasUrl: string = 'https://controle-financeiro-api-spring.herokuapp.com/receitas'
 
   constructor(private http:HttpClient, private datePipe:DatePipe) { }
 
